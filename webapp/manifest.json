@@ -1,0 +1,138 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "com.iskur.sd.ZSDFiyatKosulRaporu",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"ZSD_PRICE_CALCULATION_SRV": {
+				"uri": "/sap/opu/odata/sap/ZSD_PRICE_CALCULATION_SRV/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/metadata.xml",
+					"annotations": [
+						"mainServiceAnnotation"
+					]
+				}
+			},
+			"mainServiceAnnotation": {
+				"type": "ODataAnnotation",
+				"uri": "annotations/mainServiceAnnotation.xml",
+				"settings": {
+					"localUri": "annotations/mainServiceAnnotation.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {		
+		"config": {
+			"fullWidth": true
+		},
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "com.iskur.sd.ZSDFiyatKosulRaporu.view.S1",
+			"type": "XML",
+			"async": true,
+			"id": "S1"
+		},
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.iskur.sd.ZSDFiyatKosulRaporu.i18n.i18n"
+				}
+			},
+			"": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZSD_PRICE_CALCULATION_SRV",
+				"preload": true
+			},
+			"@i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "com.iskur.sd.ZSDFiyatKosulRaporu.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes": [
+				{
+					"name": "RouteS1",
+					"pattern": "RouteS1",
+					"target": [
+						"TargetS1"
+					]
+				}
+			],
+			"targets": {
+				"TargetS1": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "S1",
+					"viewName": "S1"
+				}
+			}
+		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zsdfiyatkosulr/webapp",
+		"_version": "1.1.0"
+	}
+}

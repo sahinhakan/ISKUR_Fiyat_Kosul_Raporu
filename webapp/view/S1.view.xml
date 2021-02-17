@@ -1,0 +1,40 @@
+<mvc:View controllerName="com.iskur.sd.ZSDFiyatKosulRaporu.controller.S1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:core="sap.ui.core">
+	<Shell id="shell" appWidthLimited="false">
+		<App id="app">
+			<pages>
+				<Page id="page" showHeader="false">
+					<content>
+						<smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="reportSet" persistencyKey="SmartFilterPKey" search="onSearch">
+							<smartFilterBar:controlConfiguration>
+								<smartFilterBar:ControlConfiguration key="Kschl" label="{i18n>KSCHL}" mandatory="mandatory" visibleInAdvancedArea="true">
+									<smartFilterBar:customControl>
+										<ComboBox id="idCustomKschlComboBox" selectionChange="onKschlSelectionChange">
+											<core:Item key="ZB01" text="ZB01"/>
+											<core:Item key="ZHAM" text="ZHAM"/>
+										</ComboBox>
+									</smartFilterBar:customControl>
+								</smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="Vkorg" label="{i18n>SATISORG}" mandatory="mandatory" visibleInAdvancedArea="true">
+									<smartFilterBar:customControl>
+										<ComboBox id="idCustomVkorgComboBox" editable="false">
+											<core:Item id="idVkorgItemP100" key="P100" text="P100"/>
+											<core:Item id="idVkorgItemP101" key="P101" text="P101"/>
+											<core:Item id="idVkorgItemT100" key="T100" text="T100"/>
+										</ComboBox>
+									</smartFilterBar:customControl>
+								</smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="Waerk" label="{i18n>WAERK_LONG}" visibleInAdvancedArea="true"
+									preventInitialDataFetchInValueHelpDialog="true" controlType="dropDownList" displayBehaviour="idOnly" filterType="multiple"></smartFilterBar:ControlConfiguration>
+							</smartFilterBar:controlConfiguration>
+						</smartFilterBar:SmartFilterBar>
+						<smartTable:SmartTable id="smartTable_ResponsiveTable" smartFilterId="smartFilterBar" tableType="ResponsiveTable" editable="false"
+							entitySet="reportSet" header="Kayıtlar" useVariantManagement="true" useTablePersonalisation="true" showRowCount="true"
+							useExportToExcel="true" enableAutoBinding="true" persistencyKey="SmartTablePKey" showFullScreenButton="true" sticky="ColumnHeaders"></smartTable:SmartTable>
+						<!--enableAutoColumnWidth="true"-->
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

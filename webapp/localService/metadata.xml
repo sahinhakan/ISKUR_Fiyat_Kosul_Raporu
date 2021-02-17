@@ -1,0 +1,117 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZSD_PRICE_CALCULATION_SRV" xml:lang="tr" sap:schema-version="1">
+			<EntityType Name="egirme" sap:content-version="1">
+				<Key><PropertyRef Name="Egirme"/></Key><Property Name="Egirme" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Eğirme Şekli" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Egirmetanimi" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Eğirme Şekli Tanımı"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="torsiyon" sap:content-version="1">
+				<Key><PropertyRef Name="Torsiyon"/></Key><Property Name="Torsiyon" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Torsiyon" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Torsiyontanimi" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Torsiyon Tanımı"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="iplikno" sap:content-version="1">
+				<Key><PropertyRef Name="Iplikno"/></Key><Property Name="Iplikno" Type="Edm.Decimal" Nullable="false" Precision="4" Scale="2" sap:unicode="false" sap:label="İplik No"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="hammadde" sap:content-version="1">
+				<Key><PropertyRef Name="Hammadde"/></Key><Property Name="Hammadde" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Hammadde" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Hammaddetanimi" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Hammadde Tanımı"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Hammaddeorani" Type="Edm.Decimal" Nullable="false" Precision="7" Scale="3" sap:unicode="false" sap:label="Hammadde Oranı"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="melanjtipi" sap:content-version="1">
+				<Key><PropertyRef Name="Melanjtipi"/></Key><Property Name="Melanjtipi" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Melanj Tipi"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Melanjtipitanimi" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Melanj Tipi Tanımı"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="return" sap:content-version="1">
+				<Key><PropertyRef Name="Type"/><PropertyRef Name="Id"/><PropertyRef Name="Number"/></Key><Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="İleti tipi" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Message Class" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Number" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="İleti numarası"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Message" Type="Edm.String" Nullable="false" MaxLength="220" sap:unicode="false" sap:label="İleti metni"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LogNo" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Günlük no." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LogMsgNo" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="İleti numarası"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MessageV1" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="İleti değişkeni"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MessageV2" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="İleti değişkeni"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MessageV3" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="İleti değişkeni"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MessageV4" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="İleti değişkeni"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Parameter" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="Parametre adı"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Row" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Parametre st." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Field" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Alan adı" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="System" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Mantıksal sistem"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="header" sap:content-version="1">
+				<Key><PropertyRef Name="Egirme"/><PropertyRef Name="Torsiyon"/><PropertyRef Name="Santuk"/><PropertyRef Name="Iplikno"/><PropertyRef Name="FytRefNo"/></Key><Property Name="Egirme" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Eğirme Şekli" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Torsiyon" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Torsiyon" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Santuk" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Şantuk" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Iplikno" Type="Edm.Decimal" Nullable="false" Precision="4" Scale="2" sap:unicode="false" sap:label="İplik No"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Egirmetanimi" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Eğirme Şekli Tanımı"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FytRefNo" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Fiyat Referans No"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Harmanfireorani" Type="Edm.Decimal" Nullable="false" Precision="7" Scale="3" sap:unicode="false" sap:label="Fire(%)"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Iscilikmaliyeti" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="5" sap:unicode="false"
+					sap:label="İşçilik Maliyeti" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Melanjtipi" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Melanj Tipi"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Melanjtipitanimi" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Melanj Tipi Tanımı"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Hammaddemaliyeti" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="5" sap:unicode="false"
+					sap:label="Hammadde Maliyeti" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Karorani" Type="Edm.Decimal" Nullable="false" Precision="7" Scale="3" sap:unicode="false" sap:label="Kar Oranı"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NetFiyat" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="Waers"
+					sap:label="Net Fiyat" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="BrutFiyat" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="Waers"
+					sap:label="Brut Fiyat" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Simulate" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Simulate" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Torsiyontanimi" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Torsiyon Tanımı"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Waers" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Para birimi" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/><NavigationProperty Name="headertohammadde" Relationship="ZSD_PRICE_CALCULATION_SRV.headertohammadde" FromRole="FromRole_headertohammadde"
+					ToRole="ToRole_headertohammadde"/><NavigationProperty Name="headertosertifika" Relationship="ZSD_PRICE_CALCULATION_SRV.headertosertifika"
+					FromRole="FromRole_headertosertifika" ToRole="ToRole_headertosertifika"/><NavigationProperty Name="headertoreturn" Relationship="ZSD_PRICE_CALCULATION_SRV.headertoreturn" FromRole="FromRole_headertoreturn"
+					ToRole="ToRole_headertoreturn"/></EntityType>
+			<EntityType Name="sertifika" sap:content-version="1">
+				<Key><PropertyRef Name="Sertifikatipi"/></Key><Property Name="Sertifikatipi" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Sertifika Tipi"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Sertifikatipitanimi" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Sertifika Tipi Tanımı"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Sertifikaorani" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2" sap:unicode="false" sap:label="Sertifika Oranı"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="report" sap:content-version="1">
+				<Key><PropertyRef Name="Kschl"/><PropertyRef Name="Vkorg"/><PropertyRef Name="Vtweg"/><PropertyRef Name="Pltyp"/><PropertyRef Name="Waerk"/><PropertyRef Name="Matnr"/><PropertyRef Name="Datbi"/><PropertyRef Name="Datab"/><PropertyRef Name="Kbetr"/></Key><Property Name="Kschl" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Koşul türü" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vkorg" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Satış org." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vtweg" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Dağıtım kanalı" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Pltyp" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Fiyat listesi" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Waerk" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Belge PB" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Malzeme" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Maktx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Tanım" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Datbi" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Geçerlilik sonu"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Datab" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Geçerlilik bşl."
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Kbetr" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Tutar"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Konwa" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Koşul para brm."
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Kpein" Type="Edm.Decimal" Nullable="false" Precision="9" Scale="3" sap:unicode="false" sap:label="Fiyat birimi"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Kmein" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Ölçü birimi" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Valdt" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Sbt.valör trh." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zterm" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Ödeme koşulu" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="tcurc" sap:content-version="1">
+				<Key><PropertyRef Name="Waers"/></Key><Property Name="Waers" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Para birimi" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ltext" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Uzun metin" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="material" sap:content-version="1">
+				<Key><PropertyRef Name="Vkorg"/><PropertyRef Name="Matnr"/></Key><Property Name="Vkorg" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Satış org." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Malzeme" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Maktx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Tanım" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<Association Name="headertosertifika" sap:content-version="1"><End Type="ZSD_PRICE_CALCULATION_SRV.header" Multiplicity="1" Role="FromRole_headertosertifika"/><End Type="ZSD_PRICE_CALCULATION_SRV.sertifika" Multiplicity="*" Role="ToRole_headertosertifika"/></Association>
+			<Association Name="headertoreturn" sap:content-version="1"><End Type="ZSD_PRICE_CALCULATION_SRV.header" Multiplicity="1" Role="FromRole_headertoreturn"/><End Type="ZSD_PRICE_CALCULATION_SRV.return" Multiplicity="*" Role="ToRole_headertoreturn"/></Association>
+			<Association Name="headertohammadde" sap:content-version="1"><End Type="ZSD_PRICE_CALCULATION_SRV.header" Multiplicity="1" Role="FromRole_headertohammadde"/><End Type="ZSD_PRICE_CALCULATION_SRV.hammadde" Multiplicity="*" Role="ToRole_headertohammadde"/></Association>
+			<EntityContainer Name="ZSD_PRICE_CALCULATION_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="egirmeSet" EntityType="ZSD_PRICE_CALCULATION_SRV.egirme" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="torsiyonSet" EntityType="ZSD_PRICE_CALCULATION_SRV.torsiyon" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ipliknoSet" EntityType="ZSD_PRICE_CALCULATION_SRV.iplikno" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="hammaddeSet" EntityType="ZSD_PRICE_CALCULATION_SRV.hammadde" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="melanjtipiSet" EntityType="ZSD_PRICE_CALCULATION_SRV.melanjtipi" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="returnSet" EntityType="ZSD_PRICE_CALCULATION_SRV.return" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="headerSet" EntityType="ZSD_PRICE_CALCULATION_SRV.header" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="sertifikaSet" EntityType="ZSD_PRICE_CALCULATION_SRV.sertifika" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="reportSet" EntityType="ZSD_PRICE_CALCULATION_SRV.report" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="tcurcSet" EntityType="ZSD_PRICE_CALCULATION_SRV.tcurc" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="materialSet" EntityType="ZSD_PRICE_CALCULATION_SRV.material" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<AssociationSet Name="headertohammaddeSet" Association="ZSD_PRICE_CALCULATION_SRV.headertohammadde" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="headerSet" Role="FromRole_headertohammadde"/><End EntitySet="hammaddeSet" Role="ToRole_headertohammadde"/></AssociationSet>
+				<AssociationSet Name="headertoreturnSet" Association="ZSD_PRICE_CALCULATION_SRV.headertoreturn" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="headerSet" Role="FromRole_headertoreturn"/><End EntitySet="returnSet" Role="ToRole_headertoreturn"/></AssociationSet>
+				<AssociationSet Name="headertosertifikaSet" Association="ZSD_PRICE_CALCULATION_SRV.headertosertifika" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="headerSet" Role="FromRole_headertosertifika"/><End EntitySet="sertifikaSet" Role="ToRole_headertosertifika"/></AssociationSet>
+			</EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZSD_PRICE_CALCULATION_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZSD_PRICE_CALCULATION_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

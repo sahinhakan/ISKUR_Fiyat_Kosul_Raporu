@@ -49,7 +49,7 @@
 			"phone": true
 		}
 	},
-	"sap.ui5": {		
+	"sap.ui5": {
 		"config": {
 			"fullWidth": true
 		},

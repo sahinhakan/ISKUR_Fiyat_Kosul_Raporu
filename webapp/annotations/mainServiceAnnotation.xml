@@ -26,6 +26,8 @@
 						<PropertyPath>Kschl</PropertyPath>
 						<PropertyPath>Vkorg</PropertyPath>
 						<PropertyPath>Waerk</PropertyPath>
+						<PropertyPath>Datab</PropertyPath>
+						<PropertyPath>Matnr</PropertyPath>
 					</Collection>
 				</Annotation>
 				<Annotation Term="UI.LineItem">
@@ -50,22 +52,22 @@
 							<PropertyValue Property="Value" Path="Pltyp"/>
 							<PropertyValue Property="Label" String="{@i18n&gt;PLTYP}"/>
 						</Record>
-						<Record Type="UI.DataField">
+						<!--<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="Matnr"/>
 							<PropertyValue Property="Label" String="{@i18n&gt;MATNR}"/>
 						</Record>
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="Maktx"/>
 							<PropertyValue Property="Label" String="{@i18n&gt;MAKTX}"/>
-						</Record>
-						<Record Type="UI.DataField">
+						</Record>-->
+					<!--	<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="Datab"/>
 							<PropertyValue Property="Label" String="{@i18n&gt;DATAB}"/>
 						</Record>
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="Datbi"/>
 							<PropertyValue Property="Label" String="{@i18n&gt;DATBI}"/>
-						</Record>
+						</Record>-->
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="Kbetr"/>
 							<PropertyValue Property="Label" String="{@i18n&gt;KBETR}"/>
@@ -106,6 +108,26 @@
 								</Record>
 								<Record Type="Common.ValueListParameterDisplayOnly">
 									<PropertyValue Property="ValueListProperty" String="Ltext"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="Metadata.report/Matnr">
+				<Annotation Term="Common.ValueList">
+					<Record Type="Common.ValueListType">
+						<PropertyValue Property="CollectionPath" String="materialSet"/>
+						<PropertyValue Property="Label" String="{@i18n&gt;MATERIAL}"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Matnr"/>
+									<PropertyValue Property="ValueListProperty" String="Matnr"/>
+								</Record>
+								<Record Type="Common.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Matnr"/>
+									<PropertyValue Property="ValueListProperty" String="Maktx"/>
 								</Record>
 							</Collection>
 						</PropertyValue>

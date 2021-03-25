@@ -26,11 +26,53 @@
 								</smartFilterBar:ControlConfiguration>
 								<smartFilterBar:ControlConfiguration key="Waerk" label="{i18n>WAERK_LONG}" visibleInAdvancedArea="true"
 									preventInitialDataFetchInValueHelpDialog="true" controlType="dropDownList" displayBehaviour="idOnly" filterType="multiple"></smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="Datab" label="{i18n>DATAB_FILTER}" visibleInAdvancedArea="true" filterType="single"></smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="Matnr" label="{i18n>MATERIAL}" visibleInAdvancedArea="true"
+									preventInitialDataFetchInValueHelpDialog="true" displayBehaviour="idAndDescription" filterType="multiple"></smartFilterBar:ControlConfiguration>
 							</smartFilterBar:controlConfiguration>
 						</smartFilterBar:SmartFilterBar>
 						<smartTable:SmartTable id="smartTable_ResponsiveTable" smartFilterId="smartFilterBar" tableType="ResponsiveTable" editable="false"
 							entitySet="reportSet" header="Kayıtlar" useVariantManagement="true" useTablePersonalisation="true" showRowCount="true"
-							useExportToExcel="true" enableAutoBinding="true" persistencyKey="SmartTablePKey" showFullScreenButton="true" sticky="ColumnHeaders"></smartTable:SmartTable>
+							useExportToExcel="true" enableAutoBinding="true" persistencyKey="SmartTablePKey" showFullScreenButton="true">
+							<Table growing="true" growingScrollToLoad="true" growingThreshold="50">
+								<columns>
+									<Column id="Malzeme" width="250px">
+										<customData>
+											<core:CustomData key="p13nData"
+												value='\{"columnKey": "Matnr", "columnIndex":"5", "leadingProperty": "Matnr", "sortProperty": "Matnr", "additionalProperty": "Maktx", "description": "Maktx", "displayBehaviour": "idAndDescription", "width": "660px"}'/>
+										</customData>
+										<Text text="{i18n>MATERIAL}"/>
+									</Column>
+									<Column id="Gecerlilik">
+										<customData>
+											<core:CustomData key="p13nData"
+												value='\{"columnKey": "Datab", "columnIndex":"6", "leadingProperty": "Datab", "sortProperty": "Datab", "additionalProperty": "Datbi", "description": "Datbi", "displayBehaviour": "idAndDescription", "width": "660px"}'/>
+										</customData>
+										<Text text="{i18n>DATAB_FILTER}"/>
+									</Column>
+									<!--<Column id="Dmbtr" hAlign="Begin">
+										<customData>
+											<core:CustomData key="p13nData"
+												value='\{"columnKey": "Dmbtr", "maxLength": "5","columnIndex":"4", "isCurrency": true, "leadingProperty": "Dmbtr", "sortProperty": "Dmbtr", "type": "numeric", "unit": "Hwaer"}'/>
+										</customData>
+										<Text text="{/#LineItems/Dmbtr/@sap:label}"/>
+									</Column>-->
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<ObjectIdentifier title="{Maktx}" text="{Matnr}"/>
+											<VBox>
+												<Text text="{path: 'Datab', type:'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"></Text>
+												<Text text="{path: 'Datbi', type:'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"></Text>
+											</VBox>
+											<!--<ObjectIdentifier title="{path: 'Datab', type:'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"
+												text="{path: 'Datbi', type:'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>-->
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</smartTable:SmartTable>
 						<!--enableAutoColumnWidth="true"-->
 					</content>
 				</Page>

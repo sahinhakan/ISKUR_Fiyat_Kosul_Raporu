@@ -7,7 +7,7 @@ sap.ui.define([
 		onInit: function () {
 			this.oSmartTable = this.byId("smartTable_ResponsiveTable");
 			this.oSmartTable.attachBeforeRebindTable(this._beforeRebindTable);
-			this.oSmartTable.getTable().setSticky(["ColumnHeaders"]);
+			this.oSmartTable.getTable().setSticky(["ColumnHeaders", "InfoToolbar", "HeaderToolbar"]);
 		},
 
 		_beforeRebindTable: function (oEvent) {

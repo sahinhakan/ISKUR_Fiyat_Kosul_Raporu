@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:cusData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<SelectDialog id="idMatnrDialog" noDataText="Kayıt yok" title="Malzemeler" search=".onSearchMatnr" confirm="onConfirmMatnr"
+		cancel=".onDialogClose" growing="true" growingThreshold="50" rememberSelections="true">
+		<!--items="{ path: 'GM>/Materials' }"-->
+		<!--<StandardListItem title="{GM>Maktx}" type="Active" description="{GM>Matnr}"/>-->
+	</SelectDialog>
+</core:FragmentDefinition>

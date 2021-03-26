@@ -1,8 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"com/iskur/sd/ZSDFiyatKosulRaporu/model/models"
-], function (UIComponent, Device, models) {
+	"com/iskur/sd/ZSDFiyatKosulRaporu/model/models",
+	"sap/ui/model/json/JSONModel"
+], function (UIComponent, Device, models, JSONModel) {
 	"use strict";
 
 	return UIComponent.extend("com.iskur.sd.ZSDFiyatKosulRaporu.Component", {
@@ -26,6 +27,12 @@ sap.ui.define([
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
 			this.getModel().setSizeLimit(100000);
+
+			this.setModel(new JSONModel({
+				Materials: []
+			}), "GM");
+
+			this.getModel("GM").setSizeLimit(9999);
 		}
 	});
 });

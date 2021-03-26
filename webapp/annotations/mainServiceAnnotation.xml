@@ -23,8 +23,8 @@
 				</Annotation>
 				<Annotation Term="UI.SelectionFields">
 					<Collection>
-						<PropertyPath>Kschl</PropertyPath>
 						<PropertyPath>Vkorg</PropertyPath>
+						<PropertyPath>Kschl</PropertyPath>
 						<PropertyPath>Waerk</PropertyPath>
 						<PropertyPath>Datab</PropertyPath>
 						<PropertyPath>Matnr</PropertyPath>
@@ -33,12 +33,12 @@
 				<Annotation Term="UI.LineItem">
 					<Collection>
 						<Record Type="UI.DataField">
-							<PropertyValue Property="Value" Path="Kschl"/>
-							<PropertyValue Property="Label" String="{@i18n&gt;KSCHL}"/>
-						</Record>
-						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="Vkorg"/>
 							<PropertyValue Property="Label" String="{@i18n&gt;SATISORG}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Kschl"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;KSCHL}"/>
 						</Record>
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="Vtweg"/>
@@ -95,7 +95,7 @@
 					</Collection>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="Metadata.report/Waerk">
+			<!--<Annotations Target="Metadata.report/Waerk">
 				<Annotation Term="Common.ValueList">
 					<Record Type="Common.ValueListType">
 						<PropertyValue Property="CollectionPath" String="tcurcSet"/>
@@ -113,8 +113,8 @@
 						</PropertyValue>
 					</Record>
 				</Annotation>
-			</Annotations>
-			<Annotations Target="Metadata.report/Matnr">
+			</Annotations>-->
+			<!--<Annotations Target="Metadata.report/Matnr">
 				<Annotation Term="Common.ValueList">
 					<Record Type="Common.ValueListType">
 						<PropertyValue Property="CollectionPath" String="materialSet"/>
@@ -133,7 +133,7 @@
 						</PropertyValue>
 					</Record>
 				</Annotation>
-			</Annotations>
+			</Annotations>-->
 		</Schema>
 	</edmx:DataServices>
 </edmx:Edmx>
